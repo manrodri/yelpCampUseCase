@@ -1,0 +1,9 @@
+[all:vars]
+
+[staging]
+192.168.1.241 ansible_user=jenkins  
+
+[prod]
+192.168.1.242 ansible_user=jenkins  
+
+

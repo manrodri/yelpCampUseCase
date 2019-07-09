@@ -1,0 +1,44 @@
+plugins {
+  //inlude the nodeJS plugin to execute nodejs and npm tasks
+  id "com.moowork.node" version "1.2.0"
+}
+
+node {
+	download = true
+}
+
+//declare a build task
+task build
+
+//declare a task to create a zip of the app
+task zip(type: Zip) {
+	from ('.') {
+		include "*"
+		include "node_modules/**"
+		include "public/**"
+		include "routes/**"
+		include "views/**"
+        include "middleware/**"
+        include "models/**"
+	}
+	destinationDir(file("dist"))
+	baseName "yelpCamp"
+}
+
+// task zipRunScript(type: Zip) {
+// 	from ('.') {
+// 		include "run.sh"
+		
+// 	}
+// 	destinationDir(file("dist"))
+// 	baseName "yelpCamp_run"
+// }
+
+//declare task dependencies
+build.dependsOn zip
+//build.dependsOn zipRunScript
+zip.dependsOn npm_build
+//zipRunScript.dependsOn npm_build
+npm_build.dependsOn npm_test
+npm_test.dependsOn npmInstall
+npm_build.dependsOn npmInstall

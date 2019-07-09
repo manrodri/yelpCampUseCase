@@ -1,0 +1,33 @@
+{
+  "name": "v1",
+  "version": "1.0.0",
+  "description": "YelpCamp v1",
+  "main": "app.js",
+  "scripts": {
+    "start": "node ./bin/www",
+    "test": "mocha"
+  },
+  "author": "Manuel",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.14.1",
+    "debug": "^4.1.1",
+    "ejs": "^2.3.4",
+    "express": "^4.13.3",
+    "express-session": "^1.16.1",
+    "http": "0.0.0",
+    "method-override": "^3.0.0",
+    "mongoose": "^4.1.12",
+    "passport": "^0.4.0",
+    "passport-local": "^1.0.0",
+    "passport-local-mongoose": "^5.0.1",
+    "path": "^0.12.7"
+  },
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "mocha": "^6.1.4"
+  },
+  "publishConfig": {
+    "registry": "http://54.72.240.241:8081/artifactory/api/npm/npm/"
+  }
+}
